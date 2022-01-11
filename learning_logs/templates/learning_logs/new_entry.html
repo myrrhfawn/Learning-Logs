@@ -1,5 +1,7 @@
 {% extends "learning_logs/base.html" %}
 
+{% load bootstrap4 %}
+
 {% block content %}
 <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a> </p>
 
@@ -8,7 +10,7 @@
 <form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
   {% csrf_token %}
   {{ form.as_p }}
-  <button name="sudmit">Add entry</button>
+  <button name="submit" class="btn btn-primary">Add entry</button>
 </form>
 
 {% endblock content %}
